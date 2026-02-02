@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Step5+ フォーム複数項目</title>
+</head>
+<body>
+
+<h1>Step5+：お問い合わせフォーム</h1>
+
+<form method="POST">
+    <p>
+        <label>お名前：</label><br>
+        <input type="text" name="username" placeholder="例：吉田" required>
+    </p>
+
+    <p>
+        <label>メール：</label><br>
+        <input type="email" name="email" placeholder="例：test@example.com" required>
+    </p>
+
+    <p>
+        <label>内容：</label><br>
+        <textarea name="message" rows="5" cols="40" placeholder="お問い合わせ内容を入力" required></textarea>
+    </p>
+
+    <button type="submit">送信</button>
+</form>
+
+<hr>
+
+{% if submitted %}
+    <h2>受け取り結果</h2>
+    <p>お名前：{{ username }}</p>
+    <p>メール：{{ email }}</p>
+    <p>内容：</p>
+    <pre>{{ message }}</pre>
+{% endif %}
+
+</body>
+</html>

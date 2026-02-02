@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>保存一覧</title>
+</head>
+<body>
+
+<h1>保存一覧</h1>
+
+<p><a href="/">入力画面へ戻る</a></p>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>ID</th>
+        <th>名前</th>
+        <th>メール</th>
+        <th>内容</th>
+        <th>日時</th>
+    </tr>
+
+    {% for row in rows %}
+    <tr>
+        <td>{{ row["id"] }}</td>
+        <td>{{ row["username"] }}</td>
+        <td>{{ row["email"] }}</td>
+        <td><pre>{{ row["message"] }}</pre></td>
+        <td>{{ row["created_at"] }}</td>
+        <td>
+            <a href="/edit/{{ row['id'] }}">編集</a>
+            <a href="/delete/{{ row['id'] }}" onclick="return confirm('削除しますか？');">削除</a>
+        </td>    
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

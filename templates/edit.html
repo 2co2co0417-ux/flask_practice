@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>編集</title>
+</head>
+<body>
+
+<h1>内容編集</h1>
+
+<form method="POST">
+    <p>
+        <label>お名前：</label><br>
+        <input type="text" name="username" value="{{ row['username'] }}" required>
+    </p>
+
+    <p>
+        <label>メール：</label><br>
+        <input type="email" name="email" value="{{ row['email'] }}" required>
+    </p>
+
+    <p>
+        <label>内容：</label><br>
+        <textarea name="message" rows="5" cols="40" required>{{ row['message'] }}</textarea>
+    </p>
+
+    <button type="submit">更新</button>
+</form>
+
+<p><a href="/list">一覧へ戻る</a></p>
+
+</body>
+</html>
